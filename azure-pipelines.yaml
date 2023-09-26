@@ -1,0 +1,23 @@
+trigger:
+- none
+
+pr: none 
+
+pool:
+  vmImage: ubuntu-latest
+
+parameters:
+  - name: source_url
+    displayName: source url to clone
+    type: string
+  - name: source_revision
+    displayName: revision to clone
+    type: string
+  - name: example_param
+    displayName: example
+    default: ""
+    type: string
+
+steps:
+- script: echo ${{parameters.source_url}} "succesfully triggered this build from TAP"
+- script: echo ${{parameters.source_revision}} "succesfully triggered this build from TAP"
